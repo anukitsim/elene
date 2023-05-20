@@ -10,4 +10,19 @@
         margin: 40px 0px -10px 0;
         font-size: 1.25rem;
     }
+
+    .buttons-container{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    p{
+        cursor: pointer;
+        
+    }
+
+    p:hover{
+        transform: scale(1.02);
+    }
 }

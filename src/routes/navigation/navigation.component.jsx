@@ -6,47 +6,53 @@ import { Container, Col, Row } from "react-bootstrap";
 
 const Navigation = () => {
   return (
-    <Container fluid>
-      <Row>
-        <Col className="logo-div">
-          <Link className="logo-link" to="/">
-            <img className="logo" src={logo} alt="logo.png" />
-          </Link>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="links-col">
-          <div className="nav-links1">
-            <Link className="nav-link" to="/shop">
-              Shop
+    <div className="navigation-container">
+      <Container fluid className="content-wrapper">
+        <Row id="root">
+          <Col className="logo-div">
+            <Link className="logo-link" to="/">
+              <img className="logo" src={logo} alt="logo.png" />
             </Link>
-            <Link className="nav-link" to="/collection">
-              Collection
-            </Link>
-            <Link className="nav-link" to="/about">
-              About
-            </Link>
-          </div>
-          <div className="nav-links2">
-            <Link className="nav-link" to="/sign-in">
-              Log in
-            </Link>
-            <Link className="nav-link" to="/cart">
-              Cart
-            </Link>
-          </div>
-        </Col>
-      </Row>
-      <Outlet />
-      <Row className="footer">
-        <Col className="footer-links">
-          <Link className="footer-link" to="/instagram">Instagram</Link>
-          <Link className="footer-link" to="/contact">Contact</Link>
-          <Link className="footer-link" to="/help">Help</Link>
-          <Link className="footer-link" to="/terms">Terms & Conditions</Link>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="links-col">
+            <div className="nav-links1">
+              <Link className="nav-link" to="/shop">
+                Shop
+              </Link>
+              <Link className="nav-link" to="/collection">
+                Collection
+              </Link>
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </div>
+            <div className="nav-links2">
+              <Link className="nav-link" to="/auth">
+                Log in
+              </Link>
+              <Link className="nav-link" to="/cart">
+                Cart
+              </Link>
+            </div>
+          </Col>
+        </Row>
+        <Outlet />
+      </Container>
+      <footer className="footer">
+        <Container>
+          <Row>
+            <Col className="footer-links">
+              <Link className="footer-link" to="/instagram">Instagram</Link>
+              <Link className="footer-link" to="/contact">Contact</Link>
+              <Link className="footer-link" to="/help">Help</Link>
+              <Link className="footer-link" to="/terms">T&C</Link>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+    </div>
   );
 };
 
