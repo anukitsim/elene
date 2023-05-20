@@ -1,43 +1,72 @@
-.navigation {
-  height: 70px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  margin-bottom: 25px;
-
-  .logo-container {
-    height: 100%;
-    width: 100%;
-    grid-column: 1 / span 1;
-    padding: 25px;
-  }
-
-  .nav-links-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    grid-column: 3 / span 7; /* Updated grid-column value to span 7 columns */
-    
-    .nav-link {
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-  }
-
-  .sign-in-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    grid-column: 11 / span 2; /* Updated grid-column value to span 2 columns */
-    
-    .nav-link {
-      padding: 10px 15px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+.logo {
+  width: 10%;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.logo-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5.9%;
+}
+
+.links-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav-links1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.nav-links2 {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  padding-top: 2rem;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-link:hover {
+text-decoration: none;
+color: black;
+}
+
+
