@@ -10,6 +10,7 @@ import Button from "../button/button.component";
 import { useNavigate } from "react-router-dom";
 
 
+
 const defaultFormFields = {
   email: "",
   password: "",
@@ -23,24 +24,29 @@ const SignInForm = () => {
 
   const { email, password } = formFields;
 
+
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopUp();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopUp();
+   
+   
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const {user} = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+
+     
+     
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/wrong-password") {
@@ -59,6 +65,10 @@ const SignInForm = () => {
   };
   const handleForgotPassword = () => {
     navigate("/reset-password");
+  };
+
+  const handleSignUp = () => {
+    navigate("/sign-up");
   };
   
   return (
@@ -89,8 +99,11 @@ const SignInForm = () => {
           <Button type="button" onClick={signInWithGoogle}>
             Google sign in
           </Button>
+
+        
         
         </div>
+        <p className="forgot-password" onClick={handleSignUp}>Create Account</p>
       </form>
     </div>
   );

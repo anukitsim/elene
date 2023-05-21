@@ -2,7 +2,8 @@ import { useState } from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import { resetPassword } from "../../utils/firebase/firebase.utils";
 import Button from "../../components/button/button.component";
-import './reset-password.styles.scss';
+import { Link } from "react-router-dom";
+import "./reset-password.styles.scss";
 
 const ResetPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -16,8 +17,16 @@ const ResetPasswordPage = () => {
       setEmail("");
     } catch (error) {
       console.log(error);
+      alert("An error occurred. Please try again later.");
     }
   };
+
+  
+
+
+
+
+
 
   const handleChange = (event) => {
     setEmail(event.target.value);

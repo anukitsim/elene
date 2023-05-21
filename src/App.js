@@ -1,7 +1,8 @@
 
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/navigation/navigation.component";
-import Authentication from './routes/authentication/authentication.component';
+import SignInForm from "./components/sign-in-form/sign-in-form.component";
+import SignUpForm from './components/sign-up-form/sign-up-form.component';
 import ResetPasswordPage from "./routes/reset-password/reset-password.component";
 
 const Shop = () => {
@@ -16,7 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route path="shop" element={<Shop />} />
-          <Route path="auth" element={<Authentication />} />
+          <Route path="sign-in" element={<SignInForm />} />
+          <Route path="sign-up" element={<SignUpForm />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
         </Route>
       </Routes>
