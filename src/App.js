@@ -4,12 +4,8 @@ import Navigation from "./routes/navigation/navigation.component";
 import SignInForm from "./components/sign-in-form/sign-in-form.component";
 import SignUpForm from './components/sign-up-form/sign-up-form.component';
 import ResetPasswordPage from "./routes/reset-password/reset-password.component";
+import Shop from "./routes/shop/shop.component";
 
-const Shop = () => {
- return (
-<div>shop</div>
- ) 
-}
 
 const App = () => {
   return (

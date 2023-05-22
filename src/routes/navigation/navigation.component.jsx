@@ -5,11 +5,17 @@ import logo from "../../assets/ukbac.logo.black.png";
 import { Container, Col, Row } from "react-bootstrap";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartDropDown from '../../components/cart-dropdown/cart-dropdown.component';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
- 
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+
+  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+
+  
 
 
   return (
@@ -47,11 +53,13 @@ const Navigation = () => {
                 )
               }
             
-              <Link className="nav-link" to="/cart">
+              <Link onClick={toggleIsCartOpen} className="nav-link" >
                 Cart
               </Link>
             </div>
+            
           </Col>
+          {isCartOpen && <CartDropDown />}
         </Row>
         <Outlet />
       </Container>
