@@ -27,22 +27,29 @@
       button {
         
         display: flex;
+        
       }
     }
   
-    .footer {
+    .product-footer {
       width: 100%;
       height: 5%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+     margin-left: 5%;
       font-size: 18px;
   
       .name {
         width: 90%;
         margin-bottom: 15px;
+      
+      
       }
   
       .price {
+        width: 10%;
+      }
+      .currency{
         width: 10%;
       }
     }

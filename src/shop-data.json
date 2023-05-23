@@ -1,57 +1,66 @@
 [
     {
       "id": 1,
-      "name": "Brown Brim",
+      "name": "swin suit1",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 25
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 2,
-      "name": "Blue Beanie",
+      "name": "swin suit2",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 18
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 3,
-      "name": "Brown Cowboy",
+      "name": "swin suit3",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 35
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 4,
-      "name": "Grey Brim",
+      "name": "swin suit4",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 25
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 5,
-      "name": "Green Beanie",
+      "name": "swin suit5",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 18
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 6,
-      "name": "Palm Tree Cap",
+      "name": "swin suit6",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 14
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 7,
-      "name": "Red Beanie",
+      "name": "swin suit7",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 18
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 8,
-      "name": "Wolf Cap",
+      "name": "swin suit8",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 14
+      "price": 100,
+      "currency": "$"
     },
     {
       "id": 9,
-      "name": "Blue Snapback",
+      "name": "swin suit9",
       "imageUrl": "https://play-lh.googleusercontent.com/kvswWeqQPJYFZbHQlQPswxIeAOZ-U6JQR5YQ1OYjobK9oT8bvNmptVXJbfwVZS1xnQeg=w5120-h2880-rw",
-      "price": 16
+      "price": 100,
+      "currency": "$"
     }
   ]
   
