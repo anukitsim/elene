@@ -5,6 +5,7 @@ import SignInForm from "./components/sign-in-form/sign-in-form.component";
 import SignUpForm from './components/sign-up-form/sign-up-form.component';
 import ResetPasswordPage from "./routes/reset-password/reset-password.component";
 import Shop from "./routes/shop/shop.component";
+import Checkout from "./routes/checkout/checkout.component";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="sign-in" element={<SignInForm />} />
           <Route path="sign-up" element={<SignUpForm />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </div>
