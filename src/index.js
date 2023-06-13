@@ -1,26 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "jquery/dist/jquery.min.js";
+
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { UserProvider } from "./contexts/user.context";
-import { ProductsProvider } from "./contexts/products.context";
+
 import { CartProvider } from "./contexts/cart.context";
+import { stripePromise } from "./utils/stripe/stripe.utils";
+
+import { Elements } from "@stripe/react-stripe-js";
+
+import { store } from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <ProductsProvider>
-          <CartProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <CartProvider>
+          <Elements stripe={stripePromise}>
             <App />
-          </CartProvider>
-        </ProductsProvider>
-      </UserProvider>
-    </BrowserRouter>
+          </Elements>
+        </CartProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
