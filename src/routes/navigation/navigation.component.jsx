@@ -1,20 +1,24 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./navigation.styles.scss";
 import logo from "../../assets/ukbac.logo.black.png";
 import { Container, Col, Row } from "react-bootstrap";
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
+
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-import CartDropDown from '../../components/cart-dropdown/cart-dropdown.component';
+import CartDropDown from "../../components/cart-dropdown/cart-dropdown.component";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { setIsCartOpen } from "../../store/cart/cart.action";
 
 const Navigation = () => {
-  const currentUser = useSelector(selectCurrentUser);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const dispatch = useDispatch();
 
-  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+  const currentUser = useSelector(selectCurrentUser);
+
+  const isCartOpen = useSelector(selectIsCartOpen);
+
+  const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
   return (
     <div className="navigation-container">
@@ -41,18 +45,12 @@ const Navigation = () => {
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="shopDropdown">
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      to="/shop/kalgotkebi"
-                    >
+                    <Link className="dropdown-item" to="/shop/kalgotkebi">
                       Kalgotkebi
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      to="/shop/kupalnikebi"
-                    >
+                    <Link className="dropdown-item" to="/shop/kupalnikebi">
                       Kupalnikebi
                     </Link>
                   </li>
