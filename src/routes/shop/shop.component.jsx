@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { selectCategoriesMap } from '../../store/categories/category.selector'
 import ProductCard from "../../components/product-card/product-card.component";
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
-import { setCategoriesMap } from '../../store/categories/category.action';
+import { setCategories } from '../../store/categories/category.action';
 import { useDispatch } from "react-redux";
 
 const Shop = () => {
@@ -17,14 +17,14 @@ const Shop = () => {
 
   useEffect(() => {
     const getCategoriesMap = async () => {
-      const categoryMap = await getCategoriesAndDocuments('categories');
+      const categoriesArray = await getCategoriesAndDocuments('categories');
 
     
-      dispatch(setCategoriesMap(categoryMap));
+      dispatch(setCategories(categoriesArray));
       
     }
     getCategoriesMap();
-  }, [])
+  }, [])  
 
 
   return (
@@ -33,7 +33,7 @@ const Shop = () => {
         <Fragment key={category}>
           <h2>{category}</h2>
           <div className="products-container">
-            {categoriesMap[category]?.map((product) => (
+            {categoriesMap && categoriesMap[category]?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -41,6 +41,7 @@ const Shop = () => {
       )}
     </Fragment>
   );
+  
 };
 
 export default Shop;
