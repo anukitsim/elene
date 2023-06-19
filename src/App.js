@@ -7,34 +7,16 @@ import ResetPasswordPage from "./routes/reset-password/reset-password.component"
 import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 
-
-
-
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-} from "./utils/firebase/firebase.utils";
-import { setCurrentUser } from "./store/user/user.action";
 
+import { checkUserSession } from "./store/user/user.action";
 
 const App = () => {
-
-
-  const dispatch = useDispatch()
-
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubsrcibe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-
-    return unsubsrcibe;
+    dispatch(checkUserSession());
   }, []);
   return (
     <div className="App">

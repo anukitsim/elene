@@ -10,7 +10,7 @@ import {
 import ProductCard from "../../components/product-card/product-card.component";
 import Spinner from "../../components/spinner/spinner.component";
 
-import { fetchCategriesAsync } from "../../store/categories/category.action";
+import { fetchCategoriesStart } from "../../store/categories/category.action";
 import { useDispatch } from "react-redux";
 
 const Shop = () => {
@@ -22,7 +22,7 @@ const Shop = () => {
   const isLoading = useSelector(selectCategoriesIsLoading);
 
   useEffect(() => {
-    dispatch(fetchCategriesAsync());
+    dispatch(fetchCategoriesStart());
   }, []);
 
   return (

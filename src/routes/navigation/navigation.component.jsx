@@ -6,7 +6,7 @@ import logo from "../../assets/ukbac.logo.black.png";
 import { Container, Col, Row } from "react-bootstrap";
 
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+import { signOutStart } from "../../store/user/user.action";
 import CartDropDown from "../../components/cart-dropdown/cart-dropdown.component";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { setIsCartOpen } from "../../store/cart/cart.action";
@@ -17,6 +17,8 @@ const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
 
   const isCartOpen = useSelector(selectIsCartOpen);
+
+  const signOutUser = () => dispatch(signOutStart());
 
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 

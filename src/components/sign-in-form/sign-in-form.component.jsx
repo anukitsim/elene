@@ -1,15 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import FormInput from "../form-input/form-input.component";
-import {
-  signInWithGooglePopUp,
-  createUserDocumentFromAuth,
-  signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebase.utils";
+
 import "./sign-in-form.styles.scss";
 import Button from "../button/button.component";
 import { useNavigate } from "react-router-dom";
 
-
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/user.action";
 
 const defaultFormFields = {
   email: "",
@@ -17,36 +17,27 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
- 
+
   const navigate = useNavigate();
 
-
   const { email, password } = formFields;
-
-
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopUp();
-   
-   
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const {user} = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      dispatch(emailSignInStart(email, password));
 
-     
-     
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/wrong-password") {
@@ -70,7 +61,7 @@ const SignInForm = () => {
   const handleSignUp = () => {
     navigate("/sign-up");
   };
-  
+
   return (
     <div className="sign-up-container">
       <h2>LOG IN</h2>
@@ -92,18 +83,19 @@ const SignInForm = () => {
           value={password}
           onChange={handleChange}
         />
-      <p className="forgot-password" onClick={handleForgotPassword}>forgot password</p>
+        <p className="forgot-password" onClick={handleForgotPassword}>
+          forgot password
+        </p>
 
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
           <Button type="button" onClick={signInWithGoogle}>
             Google sign in
           </Button>
-
-        
-        
         </div>
-        <p className="forgot-password" onClick={handleSignUp}>Create Account</p>
+        <p className="forgot-password" onClick={handleSignUp}>
+          Create Account
+        </p>
       </form>
     </div>
   );
